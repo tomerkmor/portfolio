@@ -14,7 +14,7 @@ function Items({ setUserList, uniqueId, itemDeleted, setItemDeleted, userList, c
         try {
             console.log("delete clicked!")
             console.log("item: ", item)
-            const response = await axios.patch('http://localhost:5000/user/deleteItem', {
+            const response = await axios.patch('https://portfolio-1-yf07.onrender.com/user/deleteItem', {
                 id: userId,
                 itemId: item._id
             })
