@@ -29,7 +29,7 @@ function Form({setAddManually , barcode, barcode2 , setAddItem , itemAdded, setI
         if(barcode2 !== " "){
             console.log( "manual , 2barcode2:", barcode2)
             
-            axios.get('http://localhost:5000/item?id=' + barcode2).then((response) => {
+            axios.get('https://portfolio-1-yf07.onrender.com/item?id=' + barcode2).then((response) => {
                 console.log("the data that we got:" ,response.data)
                 setTitle(response.data)
                 setFormData({
