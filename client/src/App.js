@@ -33,20 +33,20 @@ function App() {
               <Route path="my-list" element={<List />} />
               <Route path="scan-item" element={<Scan />} />
               <Route path="task-manager" element={<TaskManager />} />
-              {<Route path="store" element={<Store />} />}
+              <Route path="store" element={<Store />} />
 
-              {<Route path="palindrome" element={<Palindrome />} />}
-              {<Route path="roman-numeral-converter" element={<RomanNumeralConverter />} />}
-              {<Route path="phone-converter" element={<PhoneValidator />} />}
-              {<Route path="cash-register" element={<CashRegister />} />}
-              {<Route path="poki-wiki" element={<Pokemon />} />}
+              <Route path="palindrome" element={<Palindrome />} />
+              <Route path="roman-numeral-converter" element={<RomanNumeralConverter />} />
+              <Route path="phone-converter" element={<PhoneValidator />} />
+              <Route path="cash-register" element={<CashRegister />} />
+              <Route path="poki-wiki" element={<Pokemon />} />
 
-              {<Route path="timestamp" element={<Timestamp />} />}
-              {<Route path="header-parser" element={<HeaderParser />} />}
-              {<Route path="url-shortener" element={<UrlShortener />} />}
-              {<Route path="exercise-tracker" element={<ExerciseTracker />} />}
-              {<Route path="file-metadata" element={<FileMetadata />} />}
-
+              <Route path="timestamp" element={<Timestamp />} />
+              <Route path="header-parser" element={<HeaderParser />} />
+              <Route path="url-shortener" element={<UrlShortener />} />
+              <Route path="exercise-tracker" element={<ExerciseTracker />} />
+              <Route path="file-metadata" element={<FileMetadata />} />
+            
           </Routes>
       </BrowserRouter>
       

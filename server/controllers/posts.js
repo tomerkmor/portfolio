@@ -122,7 +122,7 @@ export const login = async(req,res)=>{
     try{
        const data = req.body;
        const users = await User.find();
-
+        console.log("getting a user")
        const user = users.filter(item => {
            return (item.username === data.username && item.password === data.password)
         })
@@ -133,12 +133,28 @@ export const login = async(req,res)=>{
     }
 }
 
+export const getList2 = async(req,res)=>{
+    try{
+       const data = req.body;
+       const users = await User.find();
+        console.log("getting a user in 'getList2'...")
+       const user = users.filter(item => {
+           return (item.id === data.userId)
+        })
+       res.status(200).send({data:user[0].id});
+    }
+    catch{
+        res.status(400).send({error:"user doesn't exist"});
+    }
+}
 
-export const getList = async(req,res)=>{
+export const getList = async (req,res) => {
     console.log("hehe")
     try{
+        
         const data = req.query;
         console.log(data);
+        console.log("trying to get the list")
         const users = await User.find();
         
         const user = users.filter(item=> item.id === data.id);

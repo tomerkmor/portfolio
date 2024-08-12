@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ItemDataSchema =new mongoose.Schema({
+const ItemDataSchema = new mongoose.Schema({
     barcode:{
         type:String,
         required:true
