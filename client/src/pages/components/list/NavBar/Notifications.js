@@ -20,7 +20,7 @@ const Notifications = ({user , setToggle}) => {
     e.preventDefault()
     console.log(val)
     try {
-      const response = await axios.post('http://localhost:5000/user/changeExpD', { id: user , expD: val })
+      const response = await axios.post('https://portfolio-1-yf07.onrender.com/user/changeExpD', { id: user , expD: val })
 
       const success = (response.status === 200)
       if (success){
