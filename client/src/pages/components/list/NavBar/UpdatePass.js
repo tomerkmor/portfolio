@@ -15,7 +15,7 @@ const UpdatePass = ({user , setToggle}) => {
     e.preventDefault()
     console.log(user)
     try {
-      const response = await axios.post('http://localhost:5000/user/changePassword', {id: user , newPassword : password})
+      const response = await axios.post('https://portfolio-1-yf07.onrender.com/user/changePassword', {id: user , newPassword : password})
 
       const success = (response.status === 200)
       if (success){
