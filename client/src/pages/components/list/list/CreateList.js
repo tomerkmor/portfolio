@@ -3,10 +3,10 @@ import Items from './Items'
 import Block from './Block';
 
 
-function CreateList({userText , itemDeleted , setItemDeleted , userList , setUserList}) {
+const CreateList = ({userText , itemDeleted , setItemDeleted , userList , setUserList}) => {
     let previousVal = -1;
     const [uniqueId , setUniqueId] = useState(0)
-
+    console.log("userList: " + userList)
     return (
         <div>
             { 

@@ -108,9 +108,7 @@ export const deleteItem = async(req,res)=>{
 
 export const getUser2 = async(req,res)=>{
     try{
-        console.log("user found!")
-        console.log(req)
-        const user = await User.find({_id: req.username})
+        const user = await User.find({_id: req.query.id})
         res.status(201).json({user})
     }
     catch{
@@ -149,16 +147,14 @@ export const getList2 = async(req,res)=>{
 }
 
 export const getList = async (req,res) => {
-    console.log("hehe")
     try{
-        
         const data = req.query;
         console.log(data);
         console.log("trying to get the list")
         const users = await User.find();
         
         const user = users.filter(item=> item.id === data.id);
-        res.status(200).send({data: user[0].itemList});
+        res.status(200).send({data: user[0].itemList, status: "success"});
     }
     catch{
         res.status(400).send({error:"Error in List"});

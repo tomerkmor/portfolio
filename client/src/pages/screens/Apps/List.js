@@ -25,7 +25,8 @@ function List() {
     const getUserList = async () => {
         try {
             const response = await axios.get('http://localhost:5000/user/list?id='+userId)
-            console.log("lfdsjnkaafldjksldsfjklskdfa" , response.data.data)
+            console.log("response.data: " , response.data)
+            console.log("userList = response.data.data: " , response.data.data)
             setUserList(response.data.data)
         } catch(error) {
             console.log(error)

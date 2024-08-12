@@ -42,12 +42,6 @@ class BarcodeScanner extends Component {
     Quagga.stop();
   }
 
-
-  // function handleChange(props) {
-  //   alert("yeap..")
-  //   return ;
-  // }
-
   render() {
     return (
       <div className="App">

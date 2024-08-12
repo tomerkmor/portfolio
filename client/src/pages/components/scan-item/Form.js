@@ -27,7 +27,7 @@ function Form({setAddManually , barcode, barcode2 , setAddItem , itemAdded, setI
     useEffect(() => {
         
         if(barcode2 !== " "){
-            console.log( "manual , 2barcode2:", barcode2)
+            console.log( "manual , barcode2:", barcode2)
             
             axios.get('https://portfolio-1-yf07.onrender.com/item?id=' + barcode2).then((response) => {
                 console.log("the data that we got:" ,response.data)

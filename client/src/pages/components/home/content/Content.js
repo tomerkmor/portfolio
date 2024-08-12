@@ -1,13 +1,35 @@
 
 import '../../css/css/main.css'
 import '../../css/css/util.css'
-
+import axios from 'axios'
+import { useCookies } from 'react-cookie'
+import { useState, useEffect } from 'react'
 const Content = () => {
+    const [username, setUsername] = useState(null)
+    const [cookie, setCookie , removeCookie] = useCookies(['userId'])
+    const userId = cookie.userId
+
+    const getUsername = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/user?id='+userId)
+            console.log("response.data: " , response.data)
+            console.log("userList = response.data.data: " , response.data.data)
+            setUsername("Tomer")
+        } catch(error) {
+            console.log(error)
+            setUsername("Fail to get username")
+        }
+    }
+
+
+    useEffect(() => {
+        getUsername()
+    },[])
 
     return (
         <div className="wrap-login100-2">
             <div className="title p-t-45 p-b-25">
-                <h1>Hello &#123;username&#125;! <br /></h1>
+                <h1>Hello {username}! <br /></h1>
                 <h4>Welcome to my website :)</h4>  
             </div>
             
