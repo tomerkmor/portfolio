@@ -11,7 +11,7 @@ const UpdateEmail = ({user , setToggle}) => {
     e.preventDefault()
     console.log(email)
     try {
-      const response = await axios.post('http://localhost:5000/user/changeEmail', { id: user , newEmail: email })
+      const response = await axios.post('https://portfolio-1-yf07.onrender.com/user/changeEmail', { id: user , newEmail: email })
 
       const success = (response.status === 200)
       if (success){
