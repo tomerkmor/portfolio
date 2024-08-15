@@ -17,7 +17,7 @@ const Tasks = ({setEdit}) => {
 
     const getTasks = async () => {
         try {
-            const response = await axios.get('https://portfolio-1-yf07.onrender.com/task-manager/'+userId)
+            const response = await axios.get(process.env.REACT_APP_API_URL +'/tasks/'+userId)
             console.log(response.data.tasks)
             setTasks(response.data.tasks)
             setLoading(false);

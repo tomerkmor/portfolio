@@ -8,6 +8,7 @@ import { useCookies } from 'react-cookie'
 import InsertItem from '../../components/task-manager/InsertItem'
 import Tasks from '../../components/task-manager/Tasks'
 import Edit from '../../components/task-manager/Edit'
+import Container from '../../components/Container'
 
 const TaskManager = () => {
     const [edit, setEdit] = useState(false)
@@ -22,12 +23,7 @@ const TaskManager = () => {
     }, [cookie.userId])
 
     return (
-        <div className="container-login100-22">
-            <div className="wrap-login100-2">
-                <div className="title p-t-45 p-b-25">
-                    <h1>Task Manager <br /></h1>
-                    <h4>Add, Edit and Delete tasks</h4>  
-                </div>
+        <Container title="Task Manager" subtitle="Add, Edit and Delete tasks">
                 { !edit ? 
                     <div>
                         <InsertItem /> 
@@ -36,9 +32,8 @@ const TaskManager = () => {
                     : 
                     <Edit setEdit={setEdit}/>
                 }
-                
-            </div>
-        </div>
+        </Container>
+        
     )
 }
 

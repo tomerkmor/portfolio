@@ -11,16 +11,15 @@ const Content = () => {
 
     const getUsername = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/user?id='+userId)
-            console.log("response.data: " , response.data)
+            const response = await axios.get('https://portfolio-1-yf07.onrender.com/user?id='+userId)
+            console.log("response.data: " , response.data.user[0])
             console.log("userList = response.data.data: " , response.data.data)
-            setUsername("Tomer")
+            setUsername(response.data.user[0].username)
         } catch(error) {
             console.log(error)
-            setUsername("Fail to get username")
+            setUsername("{Failed to get username}")
         }
     }
-
 
     useEffect(() => {
         getUsername()
@@ -44,18 +43,18 @@ const Content = () => {
 
                 <h2>Pure JS exercises:</h2>
                 <p><a href="/palindrome">Palindrome</a></p>
-                <p><a href="/roman-numeral-converter" className="unavailable">Roman Numeral Converter</a></p>
-                <p><a href="/phone-converter" className="unavailable">U.S Telephone Number Validor</a></p>
+                <p><a href="/roman-numeral-converter">Roman Numeral Converter</a></p>
+                <p><a href="/phone-converter">U.S Telephone Number Validor</a></p>
                 <p><a href="/cash-register">Cash Register</a></p>
-                <p><a href="/poki-wiki" className="unavailable">Pokemon Wiki</a></p>
+                <p><a href="/poki-wiki">Pokemon Wiki</a></p>
                 <br /><br />
 
                 <h2>Node.JS Microservices:</h2>
-                <p><a href="/timestamp" className="unavailable">Timestamp</a></p>
-                <p><a href="/header-parser" className="unavailable">Header Parser</a></p>
-                <p><a href="/url-shortener"className="unavailable">Url Shortener</a></p>
-                <p><a href="/exercise-tracker"className="unavailable">Exercise Tracker</a></p>
-                <p><a href="/file-metadata"className="unavailable">File Metadata</a></p>
+                <p><a href="/timestamp">Timestamp</a></p>
+                <p><a href="/header-parser">Header Parser</a></p>
+                <p><a href="/url-shortener">Url Shortener</a></p>
+                <p><a href="/exercise-tracker">Exercise Tracker</a></p>
+                <p><a href="/file-metadata">File Metadata</a></p>
 
             </div>
         </div>

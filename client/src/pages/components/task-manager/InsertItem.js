@@ -20,7 +20,7 @@ const InsertItem = () => {
             const name = taskName
             console.log(id)
             console.log(name)
-            await axios.post('https://portfolio-1-yf07.onrender.com/task-manager', {
+            await axios.post(process.env.REACT_APP_API_URL + '/tasks', {
                 id, name
             })
 

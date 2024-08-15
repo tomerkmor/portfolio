@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import LogSchema from './LogSchema.js';
 
-const UserSchema =new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     username:{
         type: String,
         required: true
@@ -29,7 +30,12 @@ const UserSchema =new mongoose.Schema({
         type:String,
         required:true,
         default:0
-    }
+    },
+    exercisesCount: {
+        type: Number,
+        default: 0
+    },
+    log: [LogSchema]
 })
 
 const User = mongoose.model('User',UserSchema);

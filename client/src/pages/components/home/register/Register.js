@@ -34,10 +34,10 @@ const Register = ({ setShowModal, setLoggedIn}) => {
             console.log("email: " + email)
             console.log("password: " + password)
             
-            const response = await axios.post('https://portfolio-1-yf07.onrender.com/user/create', { 
+            const response = await axios.post('http://localhost:5000/user/create', { 
                 username, 
                 email,
-                password ,
+                password,
                 phone
             })
             
