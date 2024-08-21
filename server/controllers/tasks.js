@@ -61,7 +61,7 @@ const updateSingleTask = async (req,res) => {
         )
 
         if (!task) {
-            //return next(createCustomError(`No task with id : ${taskID}`, 404))
+            return next(createCustomError(`No task with id : ${taskID}`, 404))
             return res.status(404).json({msg: `No task with id of: ${taskID} was found`})
         }
         res.status(200).json({task})
