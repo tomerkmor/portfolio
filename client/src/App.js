@@ -4,6 +4,9 @@ import {
   Routes,
 } from "react-router-dom";
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { BrowserRouter} from 'react-router-dom'
 
 import Home from './pages/screens/Apps/Home'
@@ -23,6 +26,8 @@ import ExerciseTracker from './pages/screens/Microservices/ExerciseTracker'
 import FileMetadata from './pages/screens/Microservices/FileMetadata'
 
 function App() {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const secretKey = process.env.REACT_APP_PUBLIC_KEY;
   return (
     <div>
 

@@ -15,8 +15,7 @@ router.route('/:id').get(getAllTasks)
 router.route('/').post(createTask)
 
 //for edit and update:
-//router.route('/:id').get(getSingleTask).patch(updateSingleTask).delete(deleteSingleTask)
-
+router.route('/task/:taskId').delete(deleteSingleTask).get(getSingleTask).patch(updateSingleTask)
 //module.exports = router2
 export default router;
 

@@ -27,19 +27,21 @@ export const createUser = async(req,res)=>{
         let users = await User.find({});
         users = users.filter(item => item.username === data.username || item.email === data.email);
         console.log(users);
+
+        // user does not exists - create new one
         if(users.length == 0){
             const newUser = new User(data);
             newUser.save();
             res.status(200).send({data:newUser.id});
             return;
         }
+
         if(users[0].username === data.username){
             res.status(400).send({error:"username is taken"});
             return;
         }
         res.status(400).send({error:"email is taken"});
-    }
-    catch{
+    }catch{
         res.status(400).send({error:"email or username is taken"})
     }
 }

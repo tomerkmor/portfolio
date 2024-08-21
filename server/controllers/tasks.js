@@ -49,20 +49,24 @@ const getSingleTask = async (req,res) => {
 
 
 const updateSingleTask = async (req,res) => {
+    console.log("the body is: " + req.body)
     try {
-        const {id: taskID} = req.params
-        const task = await Task.findOneAndUpdate({_id: taskID}, req.body,{
-            // ?? - it avoids cases of empty update, but how?
+        const task = await Task.findOneAndUpdate(
+            {_id: req.params.taskId}, 
+            req.body,
+            {
             new: true,
             runValidators: true,
-        })
-        
+            }
+        )
+
         if (!task) {
             //return next(createCustomError(`No task with id : ${taskID}`, 404))
             return res.status(404).json({msg: `No task with id of: ${taskID} was found`})
         }
         res.status(200).json({task})
     } catch (error) {
+        console.log("failed to patch")
         res.status(500).json({msg:error})
     }
 }
@@ -71,8 +75,9 @@ const updateSingleTask = async (req,res) => {
 const deleteSingleTask = async (req,res) => {
     console.log("trying to delete")
     try {
-        const {id: taskID} = req.params;
-        const task = await Task.findOneAndDelete({_id: taskID});
+
+        console.log("?? - " + req.params.taskId)
+        //const task = await Task.findOneAndDelete({_id: req.params.taskId});
         if (!task) {
             //return next(createCustomError(`No task with id : ${taskID}`, 404))
             return res.status(404).json({msg: `No task with id of: ${taskID} was found`})
